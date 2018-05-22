@@ -36,6 +36,22 @@ if (count($pesan_datang) > 2) {
     }
 }
 
+$host = mysql_connect("localhost","inset","inset");
+ 
+if($host){
+	echo "koneksi host berhasil.<br/>";
+}else{
+	echo "koneksi gagal.<br/>";
+}
+// isikan dengan nama database yang akan di hubungkan
+$db = mysql_select_db("jadwal");
+ 
+if($db){
+	echo "koneksi database berhasil.";
+}else{
+	echo "koneksi database gagal.";
+}
+
 #-------------------------[Function]-------------------------#
 function shalat($keyword) {
     $uri = "https://time.siswadi.com/pray/" . $keyword;
