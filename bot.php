@@ -36,21 +36,6 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-$host = mysql_connect("localhost","inset","inset");
- 
-if($host){
-	echo "koneksi host berhasil.<br/>";
-}else{
-	echo "koneksi gagal.<br/>";
-}
-// isikan dengan nama database yang akan di hubungkan
-$db = mysql_select_db("jadwal");
- 
-if($db){
-	echo "koneksi database berhasil.";
-}else{
-	echo "koneksi database gagal.";
-}
 
 #-------------------------[Function]-------------------------#
 function shalat($keyword) {
@@ -76,6 +61,24 @@ function shalat($keyword) {
     return $result;
 }
 #-------------------------[Function]-------------------------#
+function shalat($keyword) {
+    $uri = "https://canny-composites.000webhostapp.com/" . $keyword;
+
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result = "Jadwal Piket ";
+	$result .= $json['date'];
+	$result .= "\nTanggal : ";
+	$result .= $json['divisi'];
+	$result .= "\n\nDivisi : ";
+	$result .= $json['Anggota'];
+	$result .= "\nAnggota : ";
+	$result .= $json['Kadiv'];
+	$result .= "\nKadiv : ";
+	return $result;
+}
+#----------------------------------------------------------#
 
 # require_once('./src/function/search-1.php');
 # require_once('./src/function/download.php');
@@ -112,7 +115,20 @@ if($message['type']=='text') {
             )
         );
     }
+if($message['type']=='text') {
+	    if ($command == '/piket') {
 
+        $result = piket($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
 }else if($message['type']=='sticker')
 {	
 	$balas = array(
