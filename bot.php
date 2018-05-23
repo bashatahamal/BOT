@@ -90,7 +90,7 @@ if ($tgl=='15:00' || $command=='/test'){
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' => $result.$timestamp.$userId.$profil
+                    'text' => $timestamp
                 )
             )
         );
