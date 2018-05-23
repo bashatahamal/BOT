@@ -61,8 +61,8 @@ function shalat($keyword) {
     return $result;
 }
 #-------------------------[Function]-------------------------#
-function shalat($keyword) {
-    $uri = "https://canny-composites.000webhostapp.com/" . $keyword;
+function piket{
+    $uri = "https://canny-composites.000webhostapp.com/";
 
     $response = Unirest\Request::get("$uri");
 
