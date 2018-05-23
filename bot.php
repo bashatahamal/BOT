@@ -80,8 +80,8 @@ if ($type == 'join' || $command == '/menu') {
         )
     );
 }
-$tanggal =date("i:sa");
-if (tanggal=='15:00pm'){
+$tgl =date("i:sa");
+if ($tgl=='15:00pm'){
 	$result = piket($options);
         $balas = array(
             'replyToken' => $replyToken,
