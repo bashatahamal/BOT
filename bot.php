@@ -80,7 +80,9 @@ if ($type == 'join' || $command == '/menu') {
         )
     );
 }
-$tgl =date("i:sa");
+$date = new DateTime();
+$tgl = $date->format('Y-m-d H:i:s');
+//$tgl =date("i:sa");
 if ($tgl=='15:00pm'){
 	$result = piket($options);
         $balas = array(
