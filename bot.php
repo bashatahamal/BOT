@@ -118,7 +118,7 @@ if($message['type']=='text') {
 if($message['type']=='text') {
 	    if ($command == '/piket') {
 
-        $result = piket($options);
+        $result = piket;
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
