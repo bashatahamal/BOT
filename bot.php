@@ -81,9 +81,9 @@ if ($type == 'join' || $command == '/menu') {
     );
 }
 $date = new DateTime();
-$tgl = $date->format('Y-m-d H:i:s');
+$tgl = $date->format('i:s');
 //$tgl =date("i:sa");
-if ($tgl=='15:00pm'){
+if ($tgl=='15:00pm' || $command=='/test'){
 	$result = piket($options);
         $balas = array(
             'replyToken' => $replyToken,
