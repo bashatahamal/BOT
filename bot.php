@@ -60,7 +60,17 @@ function shalat($keyword) {
     return $result;
 }
 #-------------------------[Function]-------------------------#
+function piket{
+    $uri = "https://canny-composites.000webhostapp.com/";
 
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result = "Jadwal Shalat ";
+	$resu .= $json['date'];
+	$resu .= "\nTanggal : ";
+	return $resu;
+}
 
 # require_once('./src/function/search-1.php');
 # require_once('./src/function/download.php');
@@ -93,20 +103,6 @@ if($message['type']=='text') {
                 array(
                     'type' => 'text',
                     'text' => $result
-                )
-            )
-        );
-    }
-	if($message['type']=='text') {
-	    if ($command == '/piket') {
-
-        $resu = piket;
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $resu
                 )
             )
         );
