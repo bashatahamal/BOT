@@ -37,13 +37,13 @@ if (count($pesan_datang) > 2) {
 }
 
 #-------------------------[Function]-------------------------#
-function shalat($keyword) {
+function piket($keyword) {
     $uri = "https://canny-composites.000webhostapp.com/" . $keyword;
 
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Shalat ";
+    $result = "Jadwal Piket ";
 	$result .= $json['location']['address'];
 	$result .= "\nTanggal : ";
 	$result .= $json['time']['date'];
@@ -83,9 +83,9 @@ if ($type == 'join' || $command == '/menu') {
 
 //pesan bergambar
 if($message['type']=='text') {
-	    if ($command == '/shalat') {
+	    if ($command == '/piket') {
 
-        $result = shalat($options);
+        $result = piket($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
