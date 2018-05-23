@@ -10,7 +10,7 @@ require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 
 $channelAccessToken = '0wMfczYB9GTr6TZb5G5IbcwA+uGcSwTGzm+/JKaUvvesgSxi7VEt+gvFSWongAYo2VlUasN6Svr/h86Pi8+QGghRnGDUOWZgDH54x9Tm1KpYKmLqg4aMByOVeLg7cfSKrJkeCFq7UBt9pfrDIJi7yQdB04t89/1O/w1cDnyilFU='; //sesuaikan 
-$channelSecret = '6c589d3320de394d76ae37b52ea1c7ba';//sesuaikan
+$channelSecret = '6c589d3320de394d76ae37b52ea1c7ba';
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
@@ -36,7 +36,6 @@ if (count($pesan_datang) > 2) {
     }
 }
 
-
 #-------------------------[Function]-------------------------#
 function shalat($keyword) {
     $uri = "https://time.siswadi.com/pray/" . $keyword;
@@ -44,7 +43,7 @@ function shalat($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Shalat ";
+    $result = "Jadwal Shalat";
 	$result .= $json['location']['address'];
 	$result .= "\nTanggal : ";
 	$result .= $json['time']['date'];
@@ -61,24 +60,6 @@ function shalat($keyword) {
     return $result;
 }
 #-------------------------[Function]-------------------------#
-function piket{
-    $uri = "https://canny-composites.000webhostapp.com/";
-
-    $response = Unirest\Request::get("$uri");
-
-    $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Piket ";
-	$result .= $json['date'];
-	$result .= "\nTanggal : ";
-	$result .= $json['divisi'];
-	$result .= "\n\nDivisi : ";
-	$result .= $json['Anggota'];
-	$result .= "\nAnggota : ";
-	$result .= $json['Kadiv'];
-	$result .= "\nKadiv : ";
-	return $result;
-}
-#----------------------------------------------------------#
 
 # require_once('./src/function/search-1.php');
 # require_once('./src/function/download.php');
@@ -115,20 +96,7 @@ if($message['type']=='text') {
             )
         );
     }
-if($message['type']=='text') {
-	    if ($command == '/piket') {
 
-        $result = piket;
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-            )
-        );
-    }
 }else if($message['type']=='sticker')
 {	
 	$balas = array(
