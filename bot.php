@@ -38,7 +38,7 @@ if (count($pesan_datang) > 2) {
 
 #-------------------------[Function]-------------------------#
 function shalat($keyword) {
-    $uri = "https://time.siswadi.com/pray/" . $keyword;
+    $uri = "https://canny-composites.000webhostapp.com/" . $keyword;
 
     $response = Unirest\Request::get("$uri");
 
@@ -56,7 +56,7 @@ function shalat($keyword) {
 	$result .= "\nMaghrib : ";
 	$result .= $json['data']['Maghrib'];
 	$result .= "\nIsya : ";
-	$result .= $json['data']['Isha'];
+	$result .= $json['Kadiv'];
     return $result;
 }
 #-------------------------[Function]-------------------------#
