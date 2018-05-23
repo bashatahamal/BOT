@@ -80,7 +80,19 @@ if ($type == 'join' || $command == '/menu') {
         )
     );
 }
-
+$tanggal =date("i:sa");
+if (tanggal=='15:00pm'){
+	$result = piket($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+}
 //pesan bergambar
 if($message['type']=='text') {
 	    if ($command == '/piket') {
