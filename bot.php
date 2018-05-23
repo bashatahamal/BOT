@@ -93,6 +93,8 @@ if ($tgl=='15:00pm'){
             )
         );
 }
+
+
 //pesan bergambar
 if($message['type']=='text') {
 	    if ($command == '/piket') {
@@ -108,7 +110,18 @@ if($message['type']=='text') {
             )
         );
     }
-
+if ($command == '/date') {
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $tgl
+                )
+            )
+        );
+    }
+	
 }else if($message['type']=='sticker')
 {	
 	$balas = array(
