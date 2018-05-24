@@ -44,11 +44,11 @@ function piket($keyword) {
 
     $json = json_decode($response->raw_body, true);
     $result = "Jadwal Piket ";
-	$result .= $json['minggu1']['senin'][0][1];
+	$result .= $json['minggu1']['senin'][1];
 	$result .= "\nTanggal : ";
-	$result .= $json['minggu1']['test'];
+	$result .= $json['minggu1']['senin'][0];
 	$result .= "\n\nShubuh : ";
-	$result .= $json['kadept']['senin'];
+	$result .= $json['kadept']['senin'][1];
 	$result .= "\nDzuhur : ";
 	$result .= $json['minggu1']['selasa'][0];
 	$result .= "\nAshar : ";
