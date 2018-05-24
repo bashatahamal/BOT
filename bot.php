@@ -46,7 +46,7 @@ function piket($keyword) {
     $result = "Jadwal Piket ";
 	$result .= $json['minggu1']['senin'];
 	$result .= "\nTanggal : ";
-	$result .= $json['time']['date'];
+	$result .= $json['minggu1']['test'];
 	$result .= "\n\nShubuh : ";
 	$result .= $json['data']['Fajr'];
 	$result .= "\nDzuhur : ";
