@@ -43,8 +43,8 @@ function piket($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Piket ";
-	$result .= $json['minggu1']['senin'][1];
+    $result = "Jadwal Piket ".$tg;
+	//$result .= $json['minggu1']['senin'][1];
 	$result .= "\nTanggal : ";
 	$result .= $json['minggu1']['senin'][0];
 	$result .= "\n\nShubuh : ";
@@ -52,9 +52,9 @@ function piket($keyword) {
 	$result .= "\nDzuhur : ";
 	$result .= $json['minggu1']['selasa'][0];
 	$result .= "\nAshar : ";
-	$result .= $json['data']['Asr'];
+	$result .= $json['kadept']['rabu'][1];
 	$result .= "\nMaghrib : ";
-	$result .= $json['data']['Maghrib'];
+	$result .= $json['minggu1']['kamis'][1];
 	
     return $result;
 }
@@ -81,7 +81,8 @@ if ($type == 'join' || $command == '/menu') {
     );
 }
 $date = new DateTime();
-$tgl = $date->format('m-d');
+$tgl = $date->format('d-m');
+$tg = $date->format('d-m-Y');
 //$tgl ='15:00';
 if ($tgl=='05-24' && $command=='/test'){
 	$result = piket($options);
