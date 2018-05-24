@@ -95,7 +95,7 @@ if ($tgl=='05-25' && $command=='/test'){
             )
         );
 }
-$a='Salah Masuk'
+$a='Salah Masuk';
 if ($command=='/test'){
 	$result = piket($options);
         $balas = array(
