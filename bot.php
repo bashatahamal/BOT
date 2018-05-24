@@ -81,8 +81,8 @@ if ($type == 'join' || $command == '/menu') {
     );
 }
 $date = new DateTime();
-//$tgl = $date->format('i:s');
-$tgl ='15:00';
+$tgl = $date->format('i:s');
+//$tgl ='15:00';
 if ($tgl=='15:00' || $command=='/test'){
 	$result = piket($options);
         $balas = array(
@@ -90,7 +90,7 @@ if ($tgl=='15:00' || $command=='/test'){
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' => $userId
+                    'text' => $tgl
                 )
             )
         );
