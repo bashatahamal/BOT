@@ -60,7 +60,7 @@ function piket($keyword) {
     return $result;
 }
 #-------------------------[Function]-------------------------#
-function senin1 {
+function senin1() {
     $uri = "https://canny-composites.000webhostapp.com/";
 
     $response = Unirest\Request::get("$uri");
@@ -106,7 +106,7 @@ $tgl = $date->format('d-m');
 $tg = $date->format('d-m-Y');
 //$tgl ='15:00';
 if ($tgl=='24-05' && $command=='/test'){
-	$result = senin1;
+	$result = senin1();
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
