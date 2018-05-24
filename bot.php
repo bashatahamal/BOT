@@ -45,7 +45,7 @@ function piket($keyword) {
 	$tg = $date->format('d-m-Y');
     $json = json_decode($response->raw_body, true);
     $result = "Jadwal Piket ".$tg;
-	//$result .= $json['minggu1']['senin'][1];
+	$result .= $tg;
 	$result .= "\nTanggal : ";
 	$result .= $json['minggu1']['senin'][0];
 	$result .= "\n\nShubuh : ";
@@ -92,7 +92,7 @@ if ($tgl=='05-24' && $command=='/test'){
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' => $tgl
+                    'text' => $tg
                 )
             )
         );
