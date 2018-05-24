@@ -44,7 +44,7 @@ function piket($keyword) {
 
     $json = json_decode($response->raw_body, true);
     $result = "Jadwal Piket ";
-	$result .= $json['minggu1']['senin'];
+	$result .= $json['minggu1']['senin'][0][1];
 	$result .= "\nTanggal : ";
 	$result .= $json['minggu1']['test'];
 	$result .= "\n\nShubuh : ";
@@ -98,7 +98,7 @@ if ($tgl=='05-24' && $command=='/test'){
 
 //pesan bergambar
 if($message['type']=='text') {
-	    if ($command == '/piket'||$command == 'piket') {
+	    if ($command == '/piket'||$command == 'piket'||$command == 'Piket') {
 
         $result = piket($options);
         $balas = array(
