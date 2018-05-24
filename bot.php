@@ -51,7 +51,7 @@ function piket($keyword) {
 	$result .= "\n\nShubuh : ";
 	$result .= $json['kadept']['senin'][1];
 	$result .= "\nDzuhur : ";
-	$result .= $json['minggu4']['selasa'][0];
+	$result .= $json['minggu4']['jumat'][0];
 	$result .= "\nAshar : ";
 	$result .= $json['kadept']['rabu'][1];
 	$result .= "\nMaghrib : ";
