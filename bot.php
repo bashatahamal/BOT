@@ -41,7 +41,8 @@ function piket($keyword) {
     $uri = "https://canny-composites.000webhostapp.com/" . $keyword;
 
     $response = Unirest\Request::get("$uri");
-
+	$date = new DateTime();
+	$tg = $date->format('d-m-Y');
     $json = json_decode($response->raw_body, true);
     $result = "Jadwal Piket ".$tg;
 	//$result .= $json['minggu1']['senin'][1];
