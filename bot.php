@@ -95,20 +95,6 @@ if ($tgl=='05-24' && $command=='/test'){
             )
         );
 }
-$a='Salah Masuk';
-if ($command=='/test'){
-	$result = piket($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $a
-                )
-            )
-        );
-}
-
 
 //pesan bergambar
 if($message['type']=='text') {
