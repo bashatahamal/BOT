@@ -44,7 +44,7 @@ function piket($keyword) {
 
     $json = json_decode($response->raw_body, true);
     $result = "Jadwal Piket ";
-	$result .= $json['jadwal']['minggu1']['senin'];
+	$result .= $json['minggu1']['senin'];
 	$result .= "\nTanggal : ";
 	$result .= $json['time']['date'];
 	$result .= "\n\nShubuh : ";
