@@ -60,7 +60,27 @@ function piket($keyword) {
     return $result;
 }
 #-------------------------[Function]-------------------------#
+function senin1 {
+    $uri = "https://canny-composites.000webhostapp.com/";
 
+    $response = Unirest\Request::get("$uri");
+	$date = new DateTime();
+	$tg = $date->format('d-m-Y');
+    $json = json_decode($response->raw_body, true);
+    $result = "Jadwal Piket Sekre HMEI";
+	$result .= "\nTanggal : ";
+	$result .= $tg;
+	$result .= "\n\nDivisi :\n\t\t\t";
+	$result .= $json['minggu1']['senin'][1];
+	$result .= "\n\t\t\t";
+	$result .= $json['minggu1']['senin'][0];
+	$result .= "\n\nPI/Kadept :\n\t\t\t\t\t";
+	$result .= $json['kadept']['senin'][0];
+	$result .= "\n\t\t\t\t\t";
+	$result .= $json['kadept']['senin'][1];
+	
+    return $result;
+}
 
 # require_once('./src/function/search-1.php');
 # require_once('./src/function/download.php');
@@ -86,13 +106,13 @@ $tgl = $date->format('d-m');
 $tg = $date->format('d-m-Y');
 //$tgl ='15:00';
 if ($tgl=='24-05' && $command=='/test'){
-	$result = piket($options);
+	$result = senin1;
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' => $tg
+                    'text' => $result
                 )
             )
         );
