@@ -83,7 +83,7 @@ if ($type == 'join' || $command == '/menu') {
 $date = new DateTime();
 $tgl = $date->format('m-d');
 //$tgl ='15:00';
-if ($tgl=='05-24' || $command=='/test'){
+if ($tgl=='05-24' && $command=='/test'){
 	$result = piket($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -91,6 +91,19 @@ if ($tgl=='05-24' || $command=='/test'){
                 array(
                     'type' => 'text',
                     'text' => $tgl
+                )
+            )
+        );
+}
+$a='Salah Masuk'
+if ($command=='/test'){
+	$result = piket($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $a
                 )
             )
         );
