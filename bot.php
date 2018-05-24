@@ -145,6 +145,18 @@ if ($command == '/date') {
             )
         );
     }
+	$jdw='http://insethmei.000webhostapp.com/';
+if ($command =='jadwal') {
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $jdw
+                )
+            )
+        );
+    }	
 	
 }else if($message['type']=='sticker')
 {	
