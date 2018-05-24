@@ -48,13 +48,13 @@ function piket($keyword) {
 	$result .= "\nTanggal : ";
 	$result .= $tg;
 	//$result .= $json['minggu1']['senin'][0];
-	$result .= "\n\nDivisi :\n\t";
+	$result .= "\n\nDivisi :\n\t\t\t";
 	$result .= $json['minggu2']['senin'][1];
-	$result .= "\n\t";
+	$result .= "\n\t\t\t";
 	$result .= $json['minggu4']['jumat'][0];
-	$result .= "\nPI/Kadept :\n\t";
+	$result .= "\nPI/Kadept :\n\t\t\t";
 	$result .= $json['kadept']['rabu'][0];
-	$result .= "\n\t";
+	$result .= "\n\t\t\t";
 	$result .= $json['kadept']['kamis'][1];
 	
     return $result;
@@ -100,7 +100,8 @@ if ($tgl=='24-05' && $command=='/test'){
 
 //pesan bergambar
 if($message['type']=='text') {
-	    if ($command == '/piket'||$command == 'piket'||$command == 'Piket') {
+	    if ($command == '/piket'
+		||$command == 'piket'||$command == 'Piket') {
 
         $result = piket($options);
         $balas = array(
