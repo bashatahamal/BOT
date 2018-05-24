@@ -48,13 +48,13 @@ function piket($keyword) {
 	$result .= "\nTanggal : ";
 	$result .= $tg;
 	//$result .= $json['minggu1']['senin'][0];
-	$result .= "\n\nDivisi : ";
+	$result .= "\n\nDivisi :\n\t";
 	$result .= $json['minggu2']['senin'][1];
-	$result .= "\n         -";
+	$result .= "\n\t";
 	$result .= $json['minggu4']['jumat'][0];
-	$result .= "\nPI/Kadept :";
-	$result .= $json['kadept']['rabu'][1];
-	$result .= "\n          -";
+	$result .= "\nPI/Kadept :\n\t";
+	$result .= $json['kadept']['rabu'][0];
+	$result .= "\n\t";
 	$result .= $json['kadept']['kamis'][1];
 	
     return $result;
