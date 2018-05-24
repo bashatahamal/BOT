@@ -52,9 +52,9 @@ function piket($keyword) {
 	$result .= $json['minggu2']['senin'][1];
 	$result .= "\n\t\t\t";
 	$result .= $json['minggu4']['jumat'][0];
-	$result .= "\nPI/Kadept :\n\t\t\t\t\t\t";
+	$result .= "\n\nPI/Kadept :\n\t\t\t\t\t";
 	$result .= $json['kadept']['rabu'][0];
-	$result .= "\n\t\t\t\t\t\t";
+	$result .= "\n\t\t\t\t\t";
 	$result .= $json['kadept']['kamis'][1];
 	
     return $result;
