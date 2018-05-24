@@ -44,7 +44,7 @@ function piket($keyword) {
 	$date = new DateTime();
 	$tg = $date->format('d-m-Y');
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Piket ".$tg;
+    $result = "Jadwal Piket ";
 	$result .= $tg;
 	$result .= "\nTanggal : ";
 	$result .= $json['minggu1']['senin'][0];
@@ -85,7 +85,7 @@ $date = new DateTime();
 $tgl = $date->format('d-m');
 $tg = $date->format('d-m-Y');
 //$tgl ='15:00';
-if ($tgl=='05-24' && $command=='/test'){
+if ($tgl=='24-05' && $command=='/test'){
 	$result = piket($options);
         $balas = array(
             'replyToken' => $replyToken,
