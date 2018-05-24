@@ -44,18 +44,18 @@ function piket($keyword) {
 	$date = new DateTime();
 	$tg = $date->format('d-m-Y');
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Piket ";
-	$result .= $tg;
+    $result = "Jadwal Piket Sekre HMEI";
 	$result .= "\nTanggal : ";
-	$result .= $json['minggu1']['senin'][0];
-	$result .= "\n\nShubuh : ";
-	$result .= $json['kadept']['senin'][1];
-	$result .= "\nDzuhur : ";
+	$result .= $tg;
+	//$result .= $json['minggu1']['senin'][0];
+	$result .= "\n\nDivisi : ";
+	$result .= $json['minggu2']['senin'][1];
+	$result .= "\n         -";
 	$result .= $json['minggu4']['jumat'][0];
-	$result .= "\nAshar : ";
+	$result .= "\nPI/Kadept :";
 	$result .= $json['kadept']['rabu'][1];
-	$result .= "\nMaghrib : ";
-	$result .= $json['minggu1']['kamis'][1];
+	$result .= "\n          -";
+	$result .= $json['kadept']['kamis'][1];
 	
     return $result;
 }
@@ -70,7 +70,7 @@ function piket($keyword) {
 
 //show menu, saat join dan command /menu
 if ($type == 'join' || $command == '/menu') {
-    $text = "Assalamualaikum Kakak, aku adalah bot jadwal shalat, silahkan ketik\n\n/shalat <nama tempat>\n\nnanti aku bakalan kasih tahu jam berapa waktunya shalat ^_^";
+    $text = "Silahkan ketik \n\n/piket\nPiket\npiket \n\nnanti aku bakalan kasih tahu jadwal piket untuk hari ini ^_^";
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
